@@ -3,19 +3,31 @@
         <div class="flex item-center justify-between">
             <div class="flex item-center gap-3">
                 <img src="/public/logo.svg" alt="logo">
-                <p>Лучшие цены <br/> в интернет магазинах</p>
+                <p>Лучшие цены <br /> в интернет магазинах</p>
             </div>
             <ul class="flex gap-10">
                 <li>
-                    <img src="/public/cart-icon.svg" alt="cart-icon">
+                    <a href="" class="flex gap-3 items-center" >
+                        <span class="p-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 transition">
+                            <img src="/public/cart-icon.svg" alt="cart-icon">
+                        </span>
+                    </a>
                     <p>Корзина</p>
                 </li>
                 <li>
-                    <img src="/public/like-outline.svg" alt="line-icon">
+                    <a href="" class="flex gap-3 items-center" flex gap-3 items-center>
+                        <span class="p-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 transition">
+                            <img src="/public/like-outline.svg" alt="line-icon">
+                        </span>
+                    </a>
                     <p>Избранное</p>
                 </li>
                 <li>
-                    <img src="/public/orders-icon.svg" alt="orders-icon">
+                    <a href="" class="flex gap-3 items-center">
+                        <span class="p-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 transition">
+                            <img src="/public/orders-icon.svg" alt="orders-icon">
+                        </span>
+                    </a>
                     <p>Заказы</p>
                 </li>
             </ul>
