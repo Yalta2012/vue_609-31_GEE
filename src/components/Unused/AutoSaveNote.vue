@@ -8,7 +8,6 @@ const saveStatus = ref("Все изменения сохранены")
 
 const watcher = watch(note, (oldValue, newValue)=>{
     saveStatus.value = 'Сохранение...';
-    console.log(newValue);
     setTimeout(() => {
         saveStatus.value = "Все изменения сохранены";
     }, 2000)

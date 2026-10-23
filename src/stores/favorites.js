@@ -1,0 +1,28 @@
+import { defineStore } from "pinia";
+import { ref } from "vue";
+
+export const useFavoritesStore = defineStore('favorites', () => {
+    const items = ref([]);
+
+    const toggleFavorite = (product) => {
+                
+
+        const index = items.value.findIndex( p => p.id === product.id);
+        if (index === -1){
+            items.value.push(product);
+        }
+        else{
+            items.value.splice(index, 1);
+        }
+
+    }
+
+    const isFavorite = (productId) => {
+        return items.value.some( product => product.id === productId);
+    }
+
+    return {items, toggleFavorite, isFavorite}
+}, 
+{
+    persist: true
+})

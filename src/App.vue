@@ -1,7 +1,6 @@
 <script setup>
 import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
-import ProductList from './components/ProductList.vue';
 import { ref } from 'vue';
 const val = ref(false)
 function sw(value) {
@@ -15,7 +14,7 @@ function sw(value) {
   <body class="flex flex-col justify-between h-dvh">
     <div class="mx-auto w-[1440px] mb-25">
       <Header />
-      <ProductList/>
+       <RouterView/>
     </div>
     <Footer />
   </body>
