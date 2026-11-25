@@ -1,9 +1,9 @@
 <script setup>
 const sections = [
-    ['catalog', 'Каталог', '/public/catalog-icon.svg'],
-    ['cart', 'Корзина', '/public/cart-icon.svg'],
-    ['favorites', 'Избранное', '/public/like-outline.svg'],
-    ['orders', 'Заказы', '/public/orders-icon.svg']
+    ['catalog', 'Каталог', '/public/catalog-icon.svg', 'true'],
+    ['cart', 'Корзина', '/public/cart-icon.svg', 'true'],
+    ['favorites', 'Избранное', '/public/like-outline.svg', 'true'],
+    ['orders', 'Заказы', '/public/orders-icon.svg', 'authStore.isAuthenricated']
 ]
 </script>
 
@@ -23,6 +23,8 @@ const sections = [
                         {{ section[1] }}
                     </RouterLink>
                 </li>
+
+                
             </ul>
         </div>
 
