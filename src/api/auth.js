@@ -1,4 +1,3 @@
-import { P } from "vue-router/dist/index-u4XkZVDG.js";
 import { apiClient } from "./http";
 
 export const authApi = {

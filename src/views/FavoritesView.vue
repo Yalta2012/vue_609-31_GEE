@@ -1,6 +1,6 @@
 <script setup>
 import { useFavoritesStore } from '@/stores/favorites';
-import VProduct from '@/components/VProduct.vue';
+import VProduct from '@/components/cards/VProduct.vue';
 
 const favoritesStore = useFavoritesStore();
 
@@ -13,7 +13,7 @@ const favoritesStore = useFavoritesStore();
             <p>В избранном пока ничего нет ❤</p>
             <RouterLink class="underline" :to="{name: 'catalog'}">Перейти в каталог</RouterLink>
         </div>
-        <div v-else class="grid grid-cols-5 gap-5">
+        <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             <v-product v-for="item in favoritesStore.items" :key="item.id" :product="item"></v-product>
         </div>
     </main>

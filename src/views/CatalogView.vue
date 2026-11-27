@@ -1,16 +1,16 @@
 <script setup>
-import VProduct from '@/components/VProduct.vue';
+import VProduct from '@/components/cards/VProduct.vue';
 import axios from 'axios';
 import SearchInput from '@/components/SearchInput.vue';
-import SortSelect from '@/components/SortSelect.vue';
-import ProductSkeletonLoader from '@/components/ProductSkeletonLoader.vue';
+import SortSelect from '@/components/form/SortSelect.vue';
+import ProductSkeletonLoader from '@/components/skeletons/ProductSkeletonLoader.vue';
 import { ref, onMounted, computed, watch } from 'vue';
 const items = ref([]);
 const showSkeletonLoader = ref(true);
 const fetchItems = async () => {
     try {
         const { data } = await axios.get(
-            "https://47277a7b1760e158.mokky.dev/items"
+            import.meta.env.VITE_API_URL + "/items"
         );
         items.value = data.map((obj) => ({
             ...obj,
@@ -85,14 +85,14 @@ const filteredProducts = computed(() => {
 <template>
     <main class="pt-10">
         <div class="flex justify-between">
-            <h1 class="text-[40px] font-bold mb-5">Каталог</h1>
+            <h1 class="text-[40px] mb-5">Каталог</h1>
             <div class="flex items-center gap-3 mb-4">
                 <SearchInput v-model="searchQuery" placeholder="Поиск по названию..." />
                 <SortSelect v-model="sortBy" :options="sortOptions" />
             </div>
 
         </div>
-        <div class="grid grid-cols-5 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             <template v-if="showSkeletonLoader">
                 <ProductSkeletonLoader v-for="value in 10" :key="value" />
             </template>

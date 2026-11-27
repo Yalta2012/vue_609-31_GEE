@@ -6,7 +6,6 @@ defineProps({
 
 <template>
     <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        {{ order }}
 
         <div
             class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 bg-slate-50/70 px-6 py-4">
@@ -55,7 +54,7 @@ defineProps({
             </div>
         </div>
 
-        <div class="flex item-center justify-between bg-slate-50/50 px-6 py-4">
+        <div class="flex items-center justify-between bg-slate-50/50 px-6 py-4">
             <span class="text-sm font-medium text-slate-600">Итого</span>
             <span class="text-lg font-bold text-red-600">
                 {{ order.orderData.totalPrice?.toLocaleString("ru-RU") }}

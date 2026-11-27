@@ -12,17 +12,17 @@ defineProps({
 </script>
 
 <template>
-    <div class="p-5 bg-slate-100 rounded-4xl flex items-start justify-between gap-10">
+    <div class="p-5 bg-slate-100 rounded-4xl flex items-start justify-between gap-10 flex-wrap">
         <div class="flex gap-4 flex-1">
             <div class="w-30 h-30 overflow-hidden">
                 <img :src="product.imageUrl" alt="product image" class="w-full h-full object-cover">
             </div>
             <div class="pt-2">
                 <h3 class="tex-xl font-semibold mb-3">
-                    {{ product.title }}
+                    {{ product.title }} 
                 </h3>
                 <div class="flex gap-3 items-center">
-                    <button @click="useFavoritesStore.toggleFavorite(product)"
+                    <button @click="favoriteStore.toggleFavorite(product)"
                         class="rounded-4xl bg-white shadow p-3 cursor-pointer hover:scale-110 transition">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -33,24 +33,12 @@ defineProps({
 
                     <button @click="cartStore.removeFromCart(product.id)"
                         class="rounded-4xl bg-white shadow p-3 cursor-pointer hover:scale-110 transition">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335"
-                                fill="white" />
-                            <path
-                                d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335"
-                                stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M7.08325 4.14166L7.26659 3.04999C7.39992 2.25832 7.49992 1.66666 8.90825 1.66666H11.0916C12.4999 1.66666 12.6083 2.29166 12.7333 3.05832L12.9166 4.14166"
-                                stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M15.7084 7.61667L15.1667 16.0083C15.0751 17.3167 15.0001 18.3333 12.6751 18.3333H7.32508C5.00008 18.3333 4.92508 17.3167 4.83341 16.0083L4.29175 7.61667"
-                                stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M8.6084 13.75H11.3834" stroke="white" stroke-width="1.25" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M7.91675 10.4167H12.0834" stroke="white" stroke-width="1.25" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                                d="M18 5.31667C15.225 5.04167 12.4333 4.9 9.65 4.9C8 4.9 6.35 4.98333 4.7 5.15L3 5.31667M7.58333 4.475L7.76667 3.38333C7.9 2.59167 8 2 9.40833 2H11.5917C13 2 13.1083 2.625 13.2333 3.39167L13.4167 4.475M16.2083 7.95L15.6667 16.3417C15.575 17.65 15.5 18.6667 13.175 18.6667H7.825C5.5 18.6667 5.425 17.65 5.33333 16.3417L4.79167 7.95M9.10833 14.0833H11.8833M8.41667 10.75H12.5833"
+                                stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
+
 
                     </button>
 
@@ -64,16 +52,12 @@ defineProps({
 
         <div class="rounded-4xl bg-white p-1 flex items-center">
             <button class="cursor-pointer w-10 h-10 font-bold flex items-center justify-center rounded-4xl"
-                @click="cartStore.updateQuantity(product.id, -1)">
-                -
-            </button>
+                @click="cartStore.updateQuantity(product.id, -1)">-</button>
 
-            <span class="w-12 text-center">{{ product.quatity }}</span>
-
-            <button class="cursor-pointer w-10 h-10 font-bold flex item-center justify-center rounded-4xl"
-                @click="cartStore.updateQuantity(product.id, 1)">
-                +
-            </button>
+            <span class="w-12 text-center">{{ product.quantity }}</span>
+            
+            <button class="cursor-pointer w-10 h-10 font-bold flex items-center justify-center rounded-4xl"
+                @click="cartStore.updateQuantity(product.id, 1)">+</button>
         </div>
     </div>
 </template>

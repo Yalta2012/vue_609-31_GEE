@@ -51,11 +51,11 @@ export const useAuthStore = defineStore('auth', () => {
         token.value = null;
         user.value = null;
         useCartStore().clearCart();
-        useFavoritesStore().clearCart();
+        useFavoritesStore().clearFavorites();
         router.push({name: 'catalog'});
     }
 
-    return {token, user, isAuthenticated, register, login,checkAuth}
+    return {token, user, isAuthenticated, register, login,checkAuth, logout, activeModal}
 }, {
     persist:{
         paths: ['token', 'user']

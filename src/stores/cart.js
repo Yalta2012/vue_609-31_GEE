@@ -71,7 +71,7 @@ export const useCartStore = defineStore('cart', () => {
 
             if(serverCart){
                 serverId.value = serverCart.id;
-                const merged = [...addToCart(serverCart.items || [])];
+                const merged = [...(serverCart.items || [])];
 
                 for (const localItem of items.value){
                     if(!merged.some(s => s.id === localItem.id)){

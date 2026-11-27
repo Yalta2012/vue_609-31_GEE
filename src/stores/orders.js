@@ -33,7 +33,7 @@ export const useOrderStore = defineStore('orders', ()=>{
         const payload = {
             customerName: authStore.user.fullName,
             items: cartStore.items,
-            totalPrise: cartStore.totalPrice,
+            totalPrice: cartStore.totalPrice,
             createdAt: new Date().toLocaleDateString('ru-RU'),
             status: 'В обработке',
             ...data

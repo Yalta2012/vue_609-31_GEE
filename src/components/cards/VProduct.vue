@@ -11,15 +11,15 @@ defineProps({
 </script>
 
 <template>
-    <div class="p-5 bg-slate-100 rounded-xl flex flex-col justify between gap-2">
+    <div class="p-5 bg-slate-100 rounded-xl flex flex-col justify-between gap-2">
         <div>
-            <img :src="product.imageUrl" alt="" class="mb-4">
+            <img :src="product.imageUrl" alt="" class="mb-4 w-full h-48 object-cover rounded-lg">
             <h3 class="text-xl font-semibold">
                 {{ product.title }}
             </h3>
         </div>
 
-        <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center flex-col lg:flex-row justify-between gap-2 ">
             <div>
                 <p class="text-slate-500">Цена</p>
                 <b class="text-xl">{{ product.price.toLocaleString("ru-RU") }} ₽</b>

@@ -27,7 +27,7 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
                 class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm"
                 @click.self="$emit('close')">
 
-                <div class="relative w-full max-w-md overflow-hidden rounded-2xl bg-whie p-6 shadow-2xl sm:p-8">
+                <div class="relative w-full max-w-md overflow-hidden rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
                     <button type="button" @click="$emit('close')"
                         class="absolute rigth-4 top-4 rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
                         aria-label="Закрыть окно">

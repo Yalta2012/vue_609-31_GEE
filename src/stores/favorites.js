@@ -67,7 +67,12 @@ export const useFavoritesStore = defineStore('favorites', () => {
             isSyncing = false;
         }
     }
-    return {items, toggleFavorite, isFavorite}
+
+    const clearFavorites = () => {
+        items.value = [];
+        serverId.value = null;
+    }
+    return {items, toggleFavorite, isFavorite, syncWithServer, clearFavorites }
 }, 
 {
     persist: true

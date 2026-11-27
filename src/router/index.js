@@ -1,4 +1,4 @@
-import { createRouter, createMemoryHistory } from "vue-router";
+import { createRouter, createMemoryHistory, createWebHistory } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 
 import CatalogView from "@/views/CatalogView.vue";
@@ -33,7 +33,7 @@ const routes = [
 
 
 const router = createRouter({
-    history: createMemoryHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
 

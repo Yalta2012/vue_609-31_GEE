@@ -6,7 +6,7 @@ const props = defineProps({
     description: { type: String},
     value: {type: [String, Number, Boolean], required: true}
 });
-const model = defineModel({required: ture});
+const model = defineModel({required: true});
 
 const isChecked = computed(() => model.value === props.value);
 </script>
