@@ -84,11 +84,15 @@ const filteredProducts = computed(() => {
 
 <template>
     <main class="pt-10">
-        <div class="flex justify-between">
+        <div class="flex flex-col sm:flex-row">
             <h1 class="text-[40px] mb-5">Каталог</h1>
-            <div class="flex items-center gap-3 mb-4">
-                <SearchInput v-model="searchQuery" placeholder="Поиск по названию..." />
-                <SortSelect v-model="sortBy" :options="sortOptions" />
+            <div class="flex items-center gap-3 mb-4 flex-col sm:flex-row">
+                <div class="w-full sm:w-auto">
+                    <SearchInput v-model="searchQuery" placeholder="Поиск по названию..." />
+                </div>
+                <div class="w-full sm:w-auto">
+                    <SortSelect v-model="sortBy" :options="sortOptions" class="w-full"/>
+                </div>
             </div>
 
         </div>

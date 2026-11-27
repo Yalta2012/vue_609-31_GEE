@@ -17,6 +17,7 @@ const sections = [
                 <p>Лучшие цены <br /> в интернет магазинах</p>
             </div>
             <ul class="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
+                
                 <template v-for="section in sections" :key="section[0]">
                     <li v-if="section[0] !== 'orders' || authStore.isAuthenticated">
                         <RouterLink :to="{ name: section[0] }" class="inline-flex flex-col items-center">
